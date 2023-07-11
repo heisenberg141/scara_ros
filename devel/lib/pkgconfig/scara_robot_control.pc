@@ -1,0 +1,8 @@
+prefix=/home/heisenberg/scara_workspace/devel
+
+Name: scara_robot_control
+Description: Description of scara_robot_control
+Version: 0.0.0
+Cflags: -I/home/heisenberg/scara_workspace/devel/include
+Libs: -L${prefix}/lib 
+Requires: 
