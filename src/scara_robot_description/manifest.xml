@@ -1,0 +1,12 @@
+<package>
+  <description brief="scara_robot_description">
+
+     scara_robot_description
+
+  </description>
+  <author>heisenberg</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/scara_robot_description</url>
+
+</package>

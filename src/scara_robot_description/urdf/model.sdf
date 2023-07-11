@@ -1,0 +1,206 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+
+<model name="ScaraBot">
+    <static>false</static>
+    
+    <link name='base_link'>
+        <pose>0 0 0.0.025 0 0 0</pose>
+        <inertial>
+            <pose>0 0 0 0 -0 0</pose>
+            <inertia>
+                <ixx>0.204167</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>0.204167</iyy>
+                <iyz>0</iyz>
+                <izz>0.4</izz>
+            </inertia>
+            <mass>20</mass>
+        </inertial>
+        <collision name='collision_base'>
+            <geometry>
+                <cylinder>
+                    <radius>0.2</radius>
+                    <length>0.05</length>
+                </cylinder>
+            </geometry>
+        </collision>
+
+        <visual name='visual_base'>
+            <geometry>
+                <cylinder>
+                    <radius>0.2</radius>
+                    <length>0.05</length>
+                </cylinder>
+            </geometry>
+            <material> 
+                <ambient>0.005 0.005 0.005 1</ambient>
+                <diffuse>0.1 0.1 0.1 1</diffuse>
+                <specular>0 0 0 0</specular>
+                <emissive>0 0 0 1</emissive>
+            </material>
+        </visual>
+        
+        <collision name='collision_base_cube'>
+            <pose>0 0 0.1 0 0 0</pose>
+            <geometry>
+                <box>
+                    <size>0.2 0.2 0.2</size>
+                </box>
+            </geometry>
+        </collision>
+
+        <visual name='visual_base_cube'>
+            <pose>0 0 0.1 0 0 0</pose>
+            <geometry>
+                <box>
+                    <size>0.2 0.2 0.2</size>
+                </box>
+            </geometry>
+            <material> 
+                <ambient>0.005 0.005 0.005 1</ambient>
+                <diffuse>0.1 0.1 0.1 1</diffuse>
+                <specular>0 0 0 0</specular>
+                <emissive>0 0 0 1</emissive>
+            </material>
+        </visual>
+    </link>
+    
+    <link name='link_1'>
+        <pose>0 0 0.3 0 0 0</pose>
+        
+        <collision name='collision_link1'>
+            <geometry>
+                <box>
+                    <size>0.1 0.1 0.2</size>
+                </box>
+            </geometry>
+        </collision>
+
+        <visual name='visual_link1'>
+           <geometry>
+                <box>
+                    <size>0.1 0.1 0.2</size>
+                </box>
+            </geometry>
+            <material> 
+                <ambient>0.94 0.81 0.02 1</ambient>
+                <diffuse>0.88 0.75 0.01 1</diffuse>
+                <specular>0 0 0 0</specular>
+                <emissive>0 0 0 1</emissive>
+            </material>
+        </visual>
+    
+        <collision name='collision_l12'>
+            <pose> 0 0.3 0.05 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.1 0.6 0.1</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual_l12'>
+            <pose> 0 0.3 0.05 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.1 0.6 0.1</size>
+                    </box>
+                </geometry>
+                <material> 
+                    <ambient>0.94 0.81 0.02 1</ambient>
+                    <diffuse>0.88 0.75 0.01 1</diffuse>
+                    <specular>0 0 0 0</specular>
+                    <emissive>0 0 0 1</emissive>
+                </material>
+            </visual>
+    </link>
+
+    <link name='link_2'>
+        <pose>0 0.7 0.25 0 0 0</pose>
+        
+        <collision name='collision_link2'>
+            <geometry>
+                <box>
+                    <size>0.1 0.4 0.1</size>
+                </box>
+            </geometry>
+        </collision>
+
+        <visual name='visual_link2'>
+           <geometry>
+                <box>
+                    <size>0.1 0.4 0.1</size>
+                </box>
+            </geometry>
+            <material> 
+                <ambient>0.005 0.005 0.005 1</ambient>
+                <diffuse>0.1 0.1 0.1 1</diffuse>
+                <specular>0 0 0 0</specular>
+                <emissive>0 0 0 1</emissive>
+            </material>
+        </visual>
+    </link>
+
+    <link name='link_3'>
+        <pose>0 0.85 0.2 0 0 0</pose>
+        
+        <collision name='collision_link3'>
+            <geometry>
+                <box>
+                    <size>0.1 0.1 0.01</size>
+                </box>
+            </geometry>
+        </collision>
+
+        <visual name='visual_link3'>
+           <geometry>
+                <box>
+                    <size>0.1 0.1 0.01</size>
+                </box>
+            </geometry>
+            <material> 
+                <ambient>0.94 0.81 0.02 1</ambient>
+                <diffuse>0.88 0.75 0.01 1</diffuse>
+                <specular>0 0 0 0</specular>
+                <emissive>0 0 0 1</emissive>
+            </material>
+        </visual>
+    </link>
+    
+    <joint type="revolute" name="q1">
+        <pose>0 0 -0.1 0 0 0</pose>
+        <child>link_1</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+        </axis>
+    </joint>
+    
+    <joint type="revolute" name="q2">
+        <pose>0 -0.2 0.05 0 0 0</pose>
+        <child>link_2</child>
+        <parent>link_1</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+        </axis>
+    </joint>
+
+    <joint type="prismatic" name="q3">
+        <parent>link_2</parent>
+        <child>link_3</child>
+        <pose>0 0 0.005 0 -0 0</pose>
+        <axis>
+            <xyz>0 0 -1</xyz>
+            <limit>
+            <lower>0</lower>
+            <upper>0.05</upper>
+            </limit>
+        </axis>
+    </joint>
+
+
+     
+	</model>
+</sdf>
